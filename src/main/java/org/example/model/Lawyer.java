@@ -20,5 +20,30 @@ public class Lawyer {
         this.phoneNumber = phoneNumber;
         this.clients = clients;
     }
+    /*
+    Геттеры и сеттеры для всх полей кроме id
+     */
+    public String getSecondName() {
+        return secondName;
+    }
 
+    public void setSecondName(String secondName) {
+        this.secondName = secondName;
+    }
+
+    public int getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(int phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public Queue<Client> getClients() {
+        return clients;
+    }
+
+    public void setClients(Queue<Client> clients) {
+        this.clients = clients;
+    }
 }

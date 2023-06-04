@@ -6,17 +6,25 @@ import java.util.List;
 Класс клиента
  */
 public class Client {
+    /*
+     Поля класса
+     */
     private int id;
     private String secondName;
     private int phoneNumber;
     private List <Service> services;
-
+    /*
+    Констурктор класса
+     */
     public Client(String secondName, int phoneNumber, List <Service> services) {
         this.secondName = secondName;
         this.phoneNumber = phoneNumber;
         this.services = services;
     }
 
+    /*
+    Геттеры и сеттеры для всех полей
+     */
     public String getSecondName() {
         return secondName;
     }
