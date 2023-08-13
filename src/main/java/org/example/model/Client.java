@@ -48,4 +48,11 @@ public class Client {
     public void setServices(List<Service> services) {
         this.services = services;
     }
+
+    @Override
+    public String toString() {
+        return  "             Фамилия: " + secondName + "\n" +
+                "             Номер: " + phoneNumber + "\n" +
+                "             Список предоставленных услуг: ";
+    }
 }

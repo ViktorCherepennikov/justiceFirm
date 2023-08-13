@@ -1,22 +1,32 @@
 package org.example.service;
 
+import org.example.collection.list.LinkedList;
 import org.example.collection.queue.Queue;
 import org.example.model.Client;
+import org.example.model.LawFirm;
 import org.example.model.Lawyer;
 
-import java.util.List;
-
+/**
+Сервис юриста
+*/
 public interface LawyerService {
 
-/*
-Сервисный класс юриста
-*/
+    /**
+     * Поиск всех юристов в списке юристов фирмы по переданной фамилии.
+     *
+     * @param firm фирма, в которой будут искаться юристы
+     * @param secondName переданная фамилия
+     * @return список подходящих юристов
+     */
+    LinkedList<Lawyer> findLawyerBySecondName(LawFirm firm, String secondName);
 
-    Lawyer findLawyerBySecondName(String secondName);
-    List<Lawyer> findAll(); // Метод возвращает всех юристов фирмы
-    Queue <Client> findAllLawyerClients(Lawyer lawyer); // Метод возвращает всех клиентов переданного юриста
-    void saveLawyer(Lawyer lawyer); // Сохраняет нового юриста
-    void editLawyer(Lawyer lawyer); // Изменяет существующшего юриста
-    void editLawyersClient(Client client); // Изменяет клиента юриста
+    /**
+     * Метод возвращает всех клиентов переданного юриста
+     *
+     * @param lawyer юрист
+     * @return список клиентов юриста
+     */
+    Queue <Client> findAllLawyerClients(Lawyer lawyer);
+
 }
 

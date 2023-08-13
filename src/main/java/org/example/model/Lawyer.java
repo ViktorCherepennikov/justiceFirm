@@ -46,4 +46,11 @@ public class Lawyer {
     public void setClients(Queue<Client> clients) {
         this.clients = clients;
     }
+
+    @Override
+    public String toString() {
+        return  "         Фамилия: " + secondName + "\n" +
+                "         Номер: " + phoneNumber + "\n"+
+                "         Список клиентов: ";
+    }
 }

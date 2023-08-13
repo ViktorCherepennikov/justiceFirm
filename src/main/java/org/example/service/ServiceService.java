@@ -5,17 +5,19 @@ import org.example.model.Service;
 
 import java.util.List;
 
-public interface ServiceService {
-
-/*
-Сервисный класс услуги
+/**
+Сервис услуги
 */
-
-    List<Service> findAll(Client client); // Метод возвращает все услуги для переданного клиента
-    void editClientsServises(Client client); // Метод позволяет изменить список услуг для переданного клиента
-    void saveService(Service service); // Сохраняет услугу
-    void deleteService(Client client); // Удаляет услугу для переданного клиента
-    int getPrice(Client client); // Позволяет высчитать стоимость услуг оказанных для переданного клиента
+public interface ServiceService {
+    /**
+     * Позволяет высчитать стоимость услуг оказанных для переданного клиента
+     * Если помимо консультации есть еще какие-либо предоставленные услуги, то консультация бесплатна.
+     * Если у клиента весь перечень услуг, то стоимость отображается со скидкой 10%
+     *
+     * @param client переданный клиент
+     * @return стоимость услуг в числовом значении
+     */
+    int getPrice(Client client);
 
 }
 

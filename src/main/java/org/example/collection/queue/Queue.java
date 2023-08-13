@@ -27,24 +27,39 @@ public class Queue<T> {
     Метод проверяющий, пустая ли очередь
      */
     public boolean isEmpty() {
-        return false;
+        return front == rear;
     }
 
     /*
     Метод, проверяющий, переполнена ли очередь
      */
     public boolean isFull() {
-        return false;
+        return (rear + 1) % size == front;
     }
+
 
     /*
     Добавляет элемент в конец очереди
      */
-    public void enqueue(T item) {}
+    public void enqueue(T item) {
+        if (isFull()) {
+            throw new RuntimeException("Queue is full");
+        }
+        queue[rear] = item;
+        rear = (rear + 1) % size;
+    }
 
     /*
     Удаляет элемент из начала очереди
      */
-    public T dequeue() {return null;}
+    public T dequeue() {
+        if (isEmpty()) {
+            throw new RuntimeException("Queue is empty");
+        }
+        T item = queue[front];
+        queue[front] = null;
+        front = (front + 1) % size;
+        return item;
+    }
 }
 

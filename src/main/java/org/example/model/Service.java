@@ -5,32 +5,33 @@ import java.util.List;
 /*
 Класс услуги
  */
-public class Service{
+public class Service {
     /*
     Поля класса
      */
     private int id;
-    private int price;
-    private List<TypeOfService> typesOfService;
+    private TypeOfService typeOfService;
     /*
     Конструктор
      */
-    public Service(List<TypeOfService> typesOfService) {
-        this.typesOfService = typesOfService;
+    public Service(TypeOfService typeOfService) {
+        this.typeOfService = typeOfService;
     }
     /*
     Геттеры и сеттеры для всех полей класса кроме id
      */
     public int getPrice() {
-        return price;
+        return typeOfService.getPrice();
     }
-    public void setPrice(int price) {
-        this.price = price;
+    public void setTypeOfService(TypeOfService typeOfService) {
+        this.typeOfService = typeOfService;
     }
-    public void setTypesOfService(List<TypeOfService> typesOfService) {
-        this.typesOfService = typesOfService;
+    public TypeOfService getTypeOfService() {
+        return typeOfService;
     }
-    public List<TypeOfService> getTypesOfService() {
-        return typesOfService;
+
+    @Override
+    public String toString() {
+        return "               " + typeOfService.getTitle() + ";";
     }
 }
