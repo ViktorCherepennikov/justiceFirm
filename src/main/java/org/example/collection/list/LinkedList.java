@@ -1,4 +1,7 @@
 package org.example.collection.list;
+
+import org.example.model.Lawyer;
+
 /**
 Реализация адресного разомкнутого неупорядоченного двунаправленного списка с заголовком
  */
@@ -51,26 +54,21 @@ public class LinkedList<T> {
         size++;
     }
 
-    public void removeFirst() {
-        if (head.next == null) {
-            return;
+    public void removeBySecondName(String lastName) {
+        Node<T> current = head.next;
+        while (current != null) {
+            // Проверяем, содержит ли текущий узел фамилию юриста
+            if (current.data instanceof Lawyer && ((Lawyer) current.data).getSecondName().equals(lastName)) {
+                // Если да, то удаляем узел
+                current.prev.next = current.next;
+                if (current.next != null) {
+                    current.next.prev = current.prev;
+                }
+                size--;
+                return; // Выходим из метода после удаления первого узла с указанной фамилией
+            }
+            current = current.next;
         }
-        head.next = head.next.next;
-        if (head.next != null) {
-            head.next.prev = head;
-        }
-        size--;
-    }
-
-    public void removeLast() {
-        if (head.prev == null) {
-            return;
-        }
-        head.prev = head.prev.prev;
-        if (head.prev != null) {
-            head.prev.next = head;
-        }
-        size--;
     }
 
     //методы для доступа к элементам списка

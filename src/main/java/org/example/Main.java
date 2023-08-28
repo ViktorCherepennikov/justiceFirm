@@ -176,29 +176,29 @@ public class Main {
         }
         System.out.println("Общее количество юристов фирмы : " + lawyerList.size()); // Проверка работы метода size()
 
-        System.out.println("Удаление первого юриста в списке с выводом списка юристов, в котором удаленного юриста не будет. Ожидаемый удаленный юрист: Самойлов.");
+        System.out.println("Удаление юриста с фамилией Герасимов из списка юристов с его последующим выводом с выводом списка юристов, в котором удаленного юриста не будет.");
         System.out.println("Удаление первого юриста из списка юристов...");
-        lawyerList.removeFirst();
+        lawyerList.removeBySecondName("Герасимов");
         System.out.println("Обновленный список юристов без списка клиентов после удаления первого юриста из списка: \n");
         for (int i = 0; i < lawyerList.size(); i++) {
             System.out.println(lawyerList.get(i) + "\n");
         }
         System.out.println("Общее количество юристов фирмы : " + lawyerList.size()); // Проверка работы метода size()
 
-        System.out.println("Удаление последнего юриста в списке с выводом списка юристов, в котором удаленного юриста не будет. Ожидаемый удаленный юрист: Герасимов.");
-        System.out.println("Удаление последнего юриста из списка юристов...");
-        lawyerList.removeLast();
-        System.out.println("Обновленный список юристов без списка клиентов после удаления последнего юриста из списка: \n");
-        for (int i = 0; i < lawyerList.size(); i++) {
-            System.out.println(lawyerList.get(i) + "\n");
-        }
         System.out.println("Общее количество юристов фирмы : " + lawyerList.size()); // Проверка работы метода size()
 
         System.out.println("    Кейс 3. Проверка работы методa isEmpty(). Метод возвращает true, если список пустой, и false если нет.");
         System.out.println("    Общее количество юристов фирмы : " + lawyerList.size()); // Проверка работы метода size()
         System.out.println("    Вызов метода isEmpty() на не пустом списке. Ожидаемый результат: false");
         System.out.println("                                              Фактический результат: " + lawyerList.isEmpty());
-        lawyerList.removeLast();
+        System.out.println("Удаление юриста с фамилией Соколов из списка юристов с его последующим выводом с выводом списка юристов, в котором удаленного юриста не будет.");
+        lawyerList.removeBySecondName("Соколов");
+        System.out.println("Обновленный список юристов без списка клиентов после удаления второго юриста из списка: \n");
+        for (int i = 0; i < lawyerList.size(); i++) {
+            System.out.println(lawyerList.get(i) + "\n");
+        }
+        System.out.println("Удаление юриста с фамилией Самойлов из списка юристов.");
+        lawyerList.removeBySecondName("Самойлов");
         System.out.println("    Общее количество юристов фирмы : " + lawyerList.size()); // Проверка работы метода size()
         System.out.println("    Вызов метода isEmpty() на пустом списке. Ожидаемый результат: true");
         System.out.println("                                              Фактический результат: " + lawyerList.isEmpty());
